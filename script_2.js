@@ -1,13 +1,17 @@
 
+
+let playerscore = 0;
+let computerscore = 0;
+
 function playRound (playerSelection, computerSelection) {
 
     if ( playerSelection === computerSelection) { return("Tied! Please try again")}
     
     else if ( playerSelection === "rock" && computerSelection === "scissors") {
-            return("You win!"), playerscore++;    } 
+        playerscore++; return("You win!");    } 
     
     else if ( playerSelection === "scissors" && computerSelection === "rock") {
-        return("You lost!"), computerscore++;
+        computerscore++; return("You lost!"); 
     } 
     
     else if ( playerSelection === "rock" && computerSelection === "paper") {
@@ -15,19 +19,19 @@ function playRound (playerSelection, computerSelection) {
     } 
     
     else if ( playerSelection === "paper" && computerSelection === "rock") {
-        return("You win!") , playerscore++;
+        playerscore++; return("You win!");
     } 
     
     else if ( playerSelection === "paper" && computerSelection === "scissors") {
-        return("You lost!") , computerscore++
+        computerscore++; return("You lost!");
     } 
     
     else if ( playerSelection === "scissors" && computerSelection === "paper") {
-        return("You win!") , playerscore++;
+        playerscore++; return("You win!");
     } 
     
     else if ( playerSelection === "paper" && computerSelection === "scissors") {
-        return("You lost!") , computerscore++
+        computerscore++; return("You lost!");
     } 
     
     }
@@ -40,10 +44,18 @@ function playRound (playerSelection, computerSelection) {
        const random = Math.floor(Math.random() * arr.length);
         
        return arr[random] ;
-    
+
+           
     }
     
-    const playerSelection = prompt("What is your selected weapon: ").toLowerCase(); if (["rock", "paper", "scissors"].includes(playerSelection)) {
+    const playerSelection = prompt("What is your selected weapon: ").toLowerCase(); 
+    console.log ("You choose " +playerSelection.toLowerCase());
+    
+    let computerSelection;
+    console.log ("you choose " +computerSelection);
+    
+    
+    if (["rock", "paper", "scissors"].includes(playerSelection)) {
     
         const computerSelection = getComputerChoice ();
         const result = playRound(playerSelection, computerSelection);
@@ -55,5 +67,10 @@ function playRound (playerSelection, computerSelection) {
     
     console.log (playRound(playerSelection,computerSelection))
 
-    let playerscore = 0;
-    let computerscore = 0;
+
+    function game() {
+
+        if (playerscore === 5 && computerscore < 5 ) { return("You win!")} else { return("You lost!")}
+    }
+    
+    console.log (game());
