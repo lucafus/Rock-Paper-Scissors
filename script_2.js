@@ -52,7 +52,7 @@ function playRound (playerSelection, computerSelection) {
     console.log ("You choose " +playerSelection.toLowerCase());
     
     let computerSelection;
-    console.log ("you choose " +computerSelection);
+    
     
     
     if (["rock", "paper", "scissors"].includes(playerSelection)) {
@@ -67,10 +67,31 @@ function playRound (playerSelection, computerSelection) {
     
     console.log (playRound(playerSelection,computerSelection))
 
+    function gamescore() {
 
-    function game() {
-
-        if (playerscore === 5 && computerscore < 5 ) { return("You win!")} else { return("You lost!")}
+        if (playerscore === 5 && computerscore < 5 ) { 
+            return("You win!")
+        }
+             else { 
+                return("You lost!")
+            }
     }
     
+  
+  function game () {
+    
+    for (let i = 0; i < 5; i++ ) {
+        const playerSelection = prompt("What is your selected weapon: ").toLowerCase(); 
+        console.log ("You choose " +playerSelection.toLowerCase());
+        getComputerChoice ();
+        console.log (playRound (playerSelection, computerSelection));
+        
+
+  }
+}    
+ 
+      
+
+      
+    game();
     console.log (game());
