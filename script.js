@@ -53,8 +53,10 @@ if (["rock", "paper", "scissors"].includes(playerSelection)) {
     console.log (result)
 }
 
-else {console.log("Invalid Input, please choose rock, paper or scissors."); }
+else {
+    
+    console.log("Invalid Input, please choose rock, paper or scissors."); 
 
-
+}
 
 
