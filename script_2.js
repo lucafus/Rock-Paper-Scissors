@@ -1,3 +1,4 @@
+
 let playerscore = 0;
 let computerscore = 0;
 
@@ -38,10 +39,6 @@ function getComputerChoice() {
 let computerSelection;
 let playerSelection;
 
-
-  
-
-
 console.log(playRound(playerSelection, computerSelection));
 
 function gamescore() {
@@ -54,16 +51,18 @@ function gamescore() {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("What is your selected weapon: ").toLowerCase();
+    const playerSelection = prompt(
+      "What is your selected weapon: "
+    ).toLowerCase();
     console.log("You choose " + playerSelection);
 
     if (["rock", "paper", "scissors"].includes(playerSelection)) {
       const computerSelection = getComputerChoice();
-    console.log("Computer choose " + computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-  } else {
-    console.log("Invalid Input, please choose rock, paper or scissors.");
-  }
+      console.log("Computer choose " + computerSelection);
+      console.log(playRound(playerSelection, computerSelection));
+    } else {
+      console.log("Invalid Input, please choose rock, paper or scissors.");
+    }
   }
 
   gamescore();

@@ -1,6 +1,10 @@
 
+
+// If function that will compare the player and computer selection and return a message depending on the result //
+
 function playRound (playerSelection, computerSelection) {
 
+ 
 if ( playerSelection === computerSelection) { return("Tied! Please try again")}
 
     else if ( playerSelection === "rock" && computerSelection === "scissors") {
@@ -32,6 +36,8 @@ else if ( playerSelection === "paper" && computerSelection === "scissors") {
 
 }
 
+// Function that will select a random value from a set of arrays using the Math resource, this will be used in the playRound function above //
+
 function getComputerChoice () {
 
     const arr = ["rock" , "paper" , "scissors"]
@@ -42,10 +48,14 @@ function getComputerChoice () {
 
 }
 
+// A prompt that will appear the moment the script is launched, It will ask you for a value and return the result of it. I will be using .toLowerCase to accept any variation of the allowed values //
+
 const playerSelection = prompt("What is your selected weapon: ").toLowerCase(); 
 console.log("You choose " + playerSelection.toLowerCase());
 
 let computerSelection
+
+// If function that will reject any value other than rock,paper or scissors
 
 if (["rock", "paper", "scissors"].includes(playerSelection)) {
 
