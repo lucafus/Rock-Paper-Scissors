@@ -1,6 +1,10 @@
 
+// By declaring both of these variables with a 0 I can start using them as a part of the score system // 
+
 let playerscore = 0;
 let computerscore = 0;
+
+// If function that will compare the player and computer selection and return a message depending on the result //
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -28,6 +32,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+// Function that will select a random value from a set of arrays using the Math resource, this will be used in the playRound function above //
+
 function getComputerChoice() {
   const arr = ["rock", "paper", "scissors"];
 
@@ -41,6 +47,10 @@ let playerSelection;
 
 console.log(playRound(playerSelection, computerSelection));
 
+// By using a loop function the function is going to keep going until the playerscore until the score is 5 
+// This is going to be set up in an if function that will show a message depending on the result 
+
+
 function gamescore() {
   if (playerscore >= 5 && computerscore < 5) {
     console.log("You win the five rounds, congratulations!");
@@ -48,6 +58,9 @@ function gamescore() {
     console.log("You lost, too bad!");
   }
 }
+
+// By using a loop function the function is going to keep going until the playerscore until the score is 5,
+// Inside this function called game it I will put the prompt and round variable selection from the player and computer, by doing this inside the loop It will repeat the game until the score is set //
 
 function game() {
   for (let i = 0; i < 5; i++) {
@@ -65,7 +78,11 @@ function game() {
     }
   }
 
+// I will launch the gamescore inside the game function to log in all of the result and show the message depending on the result  
+
   gamescore();
 }
+
+// This will launch the function game and start the process
 
 game();
