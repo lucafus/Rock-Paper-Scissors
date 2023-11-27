@@ -43,12 +43,14 @@ function getComputerChoice () {
 }
 
 const playerSelection = prompt("What is your selected weapon: ").toLowerCase(); 
+console.log("You choose " + playerSelection.toLowerCase());
 
 let computerSelection
 
 if (["rock", "paper", "scissors"].includes(playerSelection)) {
 
     const computerSelection = getComputerChoice ();
+    console.log("Computer choose " + computerSelection.toLowerCase());
     const result = playRound(playerSelection, computerSelection);
     console.log (result)
 }

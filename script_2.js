@@ -38,31 +38,33 @@ function getComputerChoice() {
 let computerSelection;
 let playerSelection;
 
-if (["rock", "paper", "scissors"].includes(playerSelection)) {
-  const computerSelection = getComputerChoice();
-  const result = playRound(playerSelection, computerSelection);
-  console.log(result);
-} else {
-  console.log("Invalid Input, please choose rock, paper or scissors.");
-}
+
+  
+
 
 console.log(playRound(playerSelection, computerSelection));
 
 function gamescore() {
-  if (playerscore === 5 && computerscore < 5) {
-    return("You win the five rounds, congratulations!");
+  if (playerscore >= 5 && computerscore < 5) {
+    console.log("You win the five rounds, congratulations!");
   } else {
-    return("You lost, too bad!");
+    console.log("You lost, too bad!");
   }
 }
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    playerSelection = prompt("What is your selected weapon: ").toLowerCase();
-    console.log("You choose " + playerSelection.toLowerCase());
-    computerSelection = getComputerChoice();
+    const playerSelection = prompt("What is your selected weapon: ").toLowerCase();
+    console.log("You choose " + playerSelection);
+
+    if (["rock", "paper", "scissors"].includes(playerSelection)) {
+      const computerSelection = getComputerChoice();
+    console.log("Computer choose " + computerSelection);
     console.log(playRound(playerSelection, computerSelection));
-  };
+  } else {
+    console.log("Invalid Input, please choose rock, paper or scissors.");
+  }
+  }
 
   gamescore();
 }
