@@ -1,6 +1,5 @@
 // I create two variables with both score from 0
 
-
 let playerscore = 0;
 let computerscore = 0;
 
@@ -11,6 +10,8 @@ let computerscore = 0;
 const playerscoreE = document.querySelector ('#playerscore');
 const computerscoreE = document.querySelector ('#computerscore');
 const result = document.querySelector('#result')
+
+
 
 const btnr = document.querySelector('#btnr');
 const btns = document.querySelector('#btns');
@@ -33,18 +34,18 @@ let playerSelection ;
 
 function playRound (playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return "Tied! Please try again";
+    result.textContent= "Tied! Please try again";
   } else if ( (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper") ) 
 
   {playerscore++; 
    playerscoreE.textContent = "Player Score: " + playerscore;
-   return "You win!";}
+   result.textContent=  "You win!";}
   
   else {computerscore++; 
         computerscoreE.textContent = "Computer Score: " + computerscore;
-        return "You lost!";
+        result.textContent= "You lost!";
        
        }
 }
@@ -52,10 +53,11 @@ function playRound (playerSelection, computerSelection) {
 // If anyone of the scores reach up to 5 it will show a message depending on the result
 
 function gamescore() {
-  if (playerscore >= 5 || computerscore >= 5) {
-    console.log("You win the five rounds, congratulations!");
-  } else {
-    console.log("You lost, too bad!");
+  if (playerscore === 5 ) {
+    result.textContent = "You win the five rounds, congratulations!";
+    
+  } else if ( computerscore === 5 ){
+    result.textContent = "You lost, the computer beat you!";
   }
 }
 
