@@ -16,6 +16,7 @@ const result = document.querySelector('#result')
 const btnr = document.querySelector('#btnr');
 const btns = document.querySelector('#btns');
 const btnp = document.querySelector('#btnp');
+const btnrst = document.querySelector('#btnrst');
 
 //I create function that will select from an array a random value using the method math.random
 
@@ -51,13 +52,20 @@ function playRound (playerSelection, computerSelection) {
 }
 
 // If anyone of the scores reach up to 5 it will show a message depending on the result
-
+// If the scores reaches it to 5 from either size the buttons will be disable with the set attribute
 function gamescore() {
   if (playerscore === 5 ) {
-    result.textContent = "You win the five rounds, congratulations!";
+     
+     result.textContent = "You win the five rounds, congratulations!";
+     btnr.setAttribute("disabled", "");
+     btnp.setAttribute("disabled", "");
+     btns.setAttribute("disabled", "");
     
   } else if ( computerscore === 5 ){
     result.textContent = "You lost, the computer beat you!";
+    btnr.setAttribute("disabled", "");
+    btnp.setAttribute("disabled", "");
+    btns.setAttribute("disabled", "");
   }
 }
 
@@ -83,5 +91,18 @@ playerSelection = "paper";
     playRound(playerSelection ,computerSelection() ); 
 gamescore();} );
 
+//The restart button will reset the score to 0 and remove the disable attribute previously add it to the buttons  
+
+const reset = () => {
 
 
+  result.textContent= " "
+  playerscore = 0;
+  computerscore = 0;
+  playerscoreE.textContent = "Player Score: 0";
+  computerscoreE.textContent = "Computer Score: 0";
+  btnr.removeAttribute("disabled");
+  btnp.removeAttribute("disabled");
+  btns.removeAttribute("disabled");
+
+};
